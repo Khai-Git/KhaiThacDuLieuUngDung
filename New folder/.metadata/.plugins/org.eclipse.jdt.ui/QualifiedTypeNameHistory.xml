@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="weka.core.Instances"/>
+    <fullyQualifiedTypeName name="weka.core.converters.ConverterUtils.DataSource"/>
+    <fullyQualifiedTypeName name="loadARFF.iuh.LoadFile"/>
+    <fullyQualifiedTypeName name="weka.gui.beans.DataSource"/>
+</qualifiedTypeNameHistroy>

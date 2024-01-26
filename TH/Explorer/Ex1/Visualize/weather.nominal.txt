@@ -1,0 +1,23 @@
+@relation weather.symbolic
+
+@attribute play {yes, no}
+@attribute outlook {sunny, overcast, rainy}
+@attribute temperature {hot, mild, cool}
+@attribute humidity {high, normal}
+@attribute windy {TRUE, FALSE}
+
+@data
+no,sunny,hot,high,FALSE
+no,sunny,hot,high,TRUE
+yes,overcast,hot,high,FALSE
+yes,rainy,mild,high,FALSE
+yes,rainy,cool,normal,FALSE
+no,rainy,cool,normal,TRUE
+yes,overcast,cool,normal,TRUE
+no,sunny,mild,high,FALSE
+yes,sunny,cool,normal,FALSE
+yes,rainy,mild,normal,FALSE
+yes,sunny,mild,normal,TRUE
+yes,overcast,mild,high,TRUE
+yes,overcast,hot,normal,FALSE
+no,rainy,mild,high,TRUE

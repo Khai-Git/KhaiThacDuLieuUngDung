@@ -1,0 +1,1 @@
+What is the class value of instance number 8 in the student data?  no

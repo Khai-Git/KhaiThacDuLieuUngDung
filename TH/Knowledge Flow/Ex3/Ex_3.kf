@@ -1,0 +1,106 @@
+{
+	"flow_name" : "Ex_3",
+	"steps" : [
+		{
+			"class" : "weka.knowledgeflow.steps.Loader",
+			"properties" : {
+				"loader" : {
+					"type" : "loader",
+					"class" : "weka.core.converters.ArffLoader",
+					"filePath" : "T:/New folder/KhaiThacDuLieuUngDung/TH/Explorer/Ex3/student.arff",
+					"useRelativePath" : true
+				},
+				"name" : "ArffLoader"
+			},
+			"connections" : {
+				"dataSet" : [
+					"TextViewer",
+					"Discretize2",
+					"Remove"
+				]
+			},
+			"coordinates" : "48,195"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "TextViewer"
+			},
+			"connections" : {
+			},
+			"coordinates" : "210,338"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "TextViewer2"
+			},
+			"connections" : {
+			},
+			"coordinates" : "440,160"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.Discretize",
+					"options" : "-B 3 -M -1.0 -R first-last -precision 6"
+				},
+				"name" : "Discretize2"
+			},
+			"connections" : {
+				"dataSet" : [
+					"TextViewer2",
+					"ArffSaver"
+				]
+			},
+			"coordinates" : "225,197"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Saver",
+			"properties" : {
+				"name" : "ArffSaver",
+				"relationNameForFilename" : false,
+				"saver" : {
+					"type" : "saver",
+					"class" : "weka.core.converters.ArffSaver",
+					"filePath" : "",
+					"dir" : "T:/New folder/KhaiThacDuLieuUngDung/TH/Knowledge Flow/Ex3",
+					"prefix" : "student-data-discretized",
+					"useRelativePath" : false,
+					"options" : "-compress -decimal 6"
+				}
+			},
+			"connections" : {
+			},
+			"coordinates" : "443,273"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.Remove",
+					"options" : "-R 1"
+				},
+				"name" : "Remove"
+			},
+			"connections" : {
+				"dataSet" : [
+					"TextViewer4"
+				]
+			},
+			"coordinates" : "240,98"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "TextViewer4"
+			},
+			"connections" : {
+			},
+			"coordinates" : "444,13"
+		}
+	]
+}
